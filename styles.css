@@ -1,0 +1,107 @@
+html, body {
+  margin: 0;
+  padding:0;
+  background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+}
+.container {
+  height: 96vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.item {
+  max-width: 220px;
+  width: 100%;
+  position: relative;
+  transition: max-width .3s;
+}
+
+.item::before {
+  position: absolute;
+  height: 33px;
+  width: 33px;
+  top: 20px;
+  margin: auto;
+  font-size: 32px;
+  border: solid white 2px;
+  border-radius: 50%;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  content: attr(value);
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+}
+
+img {
+  width: 100%;
+  position: relative;
+}
+
+
+
+
+
+.one {display: flex;}
+.two {display: flex;}
+.three {display: flex;}
+.four {display: flex;}
+.five {display: flex;}
+
+/* img:nth-child(5n+1):nth-last-child(-n+5),
+  img:nth-child(5n+1):nth-last-child(-n+5) ~ img {
+    margin-left: 100px;
+  } */
+
+.hidden {
+  display: none;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .item {
+    max-width: 80px;
+    width: 100%;
+    position: relative;
+  }
+
+  .item::before {
+    top: 7px;
+    height: 14px;
+    width: 14px;
+    padding: 5px;
+    font-size: 13px;
+  }
+
+}
+
+@media only screen and (max-width: 900px) {
+  .item {
+    max-width: 140px;
+    width: 100%;
+    position: relative;
+  }
+
+  .item::before {
+    top: 15px;
+    height: 20px;
+    width: 20px;
+    padding: 5px;
+    font-size: 18px;
+  }
+
+}
