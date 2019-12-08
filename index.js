@@ -9,20 +9,32 @@ const pieces = [
   {"wood": 4},
 ]
 
+const expandedPieces = [
+  {"wheat": 6},
+  {"ore": 5},
+  {"sheep": 6},
+  {"brick":5},
+  {"wood": 6},
+]
+
 mixup = arr => {
   arr.sort(() => Math.random() - 0.5);
   return arr
 }
 
-const tiles = pieces.reduce((all, item, index) => {
-  let name = Object.entries(item)[0][0];
-  let count = Object.entries(item)[0][1]
-  while(count > 0) {
-    count--;
-    all.push([name, values[all.length]])
-  }
-  return all
-}, [])
+const makeBoard = (arr) => {
+  return arr.reduce((all, item) => {
+    let name = Object.entries(item)[0][0];
+    let count = Object.entries(item)[0][1]
+    while(count > 0) {
+      count--;
+      all.push([name, values[all.length]])
+    }
+    return all
+  }, [])
+}
+
+const tiles = makeBoard(pieces)
 
 tiles.push(['desert', 7])
 // attatching all the data to markup
@@ -48,7 +60,6 @@ const board = mixup(tiles).map((item, index)=> {
 })
 
 document.querySelector('.wrapper').appendChild(container)
-
 })
 
 
