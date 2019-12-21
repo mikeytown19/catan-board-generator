@@ -2,6 +2,7 @@ html, body {
   margin: 0;
   padding:0;
   background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+  height: 100vh;
 }
 
 h1, p {
@@ -10,14 +11,30 @@ h1, p {
   padding: 5px;
 }
 
+button {
+  appearance: none;
+  background-color: darkslategrey;
+  border-radius: 4px;
+  padding: 7px 15px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-item: center;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 .container {
-  height: 100vh;
+
   display: flex;
   justify-content: center;
   align-content: center;
 }
 
-.wrapper{
+.wrapper, .e_wrapper{
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -64,11 +81,7 @@ img {
 
 
 
-.one {display: flex;}
-.two {display: flex;}
-.three {display: flex;}
-.four {display: flex;}
-.five {display: flex;}
+.flex-container {display: flex}
 
 /* img:nth-child(5n+1):nth-last-child(-n+5),
   img:nth-child(5n+1):nth-last-child(-n+5) ~ img {
@@ -113,11 +126,15 @@ img {
   p {
     padding-top: 0;
     margin-top: 0;
-    margin-bottom: 20px;
+  }
+
+  button {
+    margin: 0 auto 30px;
+    text-align: center;
   }
 
   .item {
-    max-width: 80px;
+    max-width: 70px;
     width: 100%;
     position: relative;
     margin: -10px -3px;
