@@ -27,6 +27,7 @@ const mixup = arr => {
 }
 
 const makeBoard = (arr, val) => {
+  mixup(arr)
   return arr.reduce((all, item) => {
     let name = Object.entries(item)[0][0];
     let count = Object.entries(item)[0][1]
@@ -40,6 +41,9 @@ const makeBoard = (arr, val) => {
 
 const tiles = makeBoard(pieces, values)
 const expandedTiles = makeBoard(expandedPieces, expandedValues)
+
+tiles.push(['desert', 7])
+expandedTiles.push(['desert', 7], ['desert', 7])
 
 document.querySelector('.expanded').addEventListener('click', () => {
   const e_one = document.querySelector('.e_one')
@@ -74,9 +78,7 @@ document.querySelector('.expanded').addEventListener('click', () => {
 })
 
 
-tiles.push(['desert', 7])
 
-expandedTiles.push(['desert', 7], ['desert', 7])
 // attatching all the data to markup
 
 
